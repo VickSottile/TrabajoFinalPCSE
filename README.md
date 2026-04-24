@@ -5,7 +5,7 @@ Estudiante: Ing. Victoria Sottile
 # Sistema de Medición de Suelos (SMS)
 
 Trabajo Final Integrador — Protocolos de Comunicación en Sistemas Embebidos  
-Autor: Victoria Sottile
+Autora: Victoria Sottile
 
 ---
 
