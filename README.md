@@ -41,7 +41,7 @@ El display LCD 16x2 se maneja por **I2C** a través de un expansor PCF8574 (dire
 ```
 Source
  /inc
-  main.h            - Máquina de estados principal del sistema
+  main.h            - Bibilioteca principal del main
 /src
   main.c           - Entry point, inicialización y loop principal
 ```
