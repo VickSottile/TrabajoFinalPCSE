@@ -39,6 +39,15 @@ El display LCD 16x2 se maneja por **I2C** a través de un expansor PCF8574 (dire
 ## Estructura del repositorio
 
 ```
+Source
+ /inc
+  main.h            - Máquina de estados principal del sistema
+/src
+  main.c           - Entry point, inicialización y loop principal
+```
+
+```
+API
 /inc
   delay.h          - API de delays no bloqueantes
   debounce.h       - API de antirrebote para pulsador
@@ -61,7 +70,7 @@ El display LCD 16x2 se maneja por **I2C** a través de un expansor PCF8574 (dire
   lcd.c            - Comandos y escritura del LCD
   soilModBus.c     - MEF del sensor (Modbus RTU)
   MEF.c            - MEF principal del sistema
-  main.c           - Entry point, inicialización y loop principal
+
 ```
 
 ---
@@ -107,7 +116,7 @@ El tipo de driver es **polled** (sondeo), sin uso de interrupciones ni DMA. Los 
 | Componente | Conexión |
 |---|---|
 | NUCLEO-F446RE | — (coordinador maestro) |
-| Sensor de suelo  Temp / Hum / EC | RS-485, USART1 (PA9/PA10), DE en PA8 |
+| Sensor de suelo  Temp / Hum / EC | RS-485, USART1 (PA9/PA10), DE en PA8 (a través de MAX485) |
 | LCD 16x2 con módulo I2C (PCF8574) | I2C1 (PB8/PB9), dirección 0x27 |
 | Pulsador de usuario (B1) | PC13 |
 | LED de usuario (LD2) | PA5 |
