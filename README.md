@@ -104,8 +104,8 @@ INIT485 → IDLE485 → REQUESTING485 → WAITING485 → PARSING485 → DONE485
 El driver sigue la estructura de capas propuesta en clase:
 
 - **Capa de aplicación**: `MEF.c` llama a las funciones del driver genérico.
-- **Driver genérico** (`lcd.c`, `soilModBus.c`, `uart.c`, `uart_rs485.c`): implementa la lógica del protocolo sin depender del hardware.
-- **Port específico** (`board_port.c`, `lcd_I2C_port.c`): contiene las funciones que llaman directamente a la HAL de STM32. Esta capa es la que cambiaría si se porta el sistema a otro microcontrolador.
+- **Driver genérico** (`lcd.c`, `soilModBus.c`): implementa la lógica del protocolo sin depender del hardware.
+- **Port específico** (`board_port.c`, `lcd_I2C_port.c`, `uart.c`, `uart_rs485.c`): contiene las funciones que llaman directamente a la HAL de STM32. Esta capa es la que cambiaría si se porta el sistema a otro microcontrolador.
 
 El tipo de driver es **polled** (encuesta), sin uso de interrupciones ni DMA. Los delays se implementan de forma no bloqueante usando `delay_t` con timestamps de `HAL_GetTick()`.
 
