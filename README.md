@@ -107,7 +107,7 @@ El driver sigue la estructura de capas propuesta en clase:
 - **Driver genérico** (`lcd.c`, `soilModBus.c`, `uart.c`, `uart_rs485.c`): implementa la lógica del protocolo sin depender del hardware.
 - **Port específico** (`board_port.c`, `lcd_I2C_port.c`): contiene las funciones que llaman directamente a la HAL de STM32. Esta capa es la que cambiaría si se porta el sistema a otro microcontrolador.
 
-El tipo de driver es **polled** (sondeo), sin uso de interrupciones ni DMA. Los delays se implementan de forma no bloqueante usando `delay_t` con timestamps de `HAL_GetTick()`.
+El tipo de driver es **polled** (encuesta), sin uso de interrupciones ni DMA. Los delays se implementan de forma no bloqueante usando `delay_t` con timestamps de `HAL_GetTick()`.
 
 ---
 
